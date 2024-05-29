@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Pagina login</title>
+    </head>
+    <body>
+        <label for="user">Username:</label><br>
+        <input type="text" id="user"><br>
+        <label for="password">Password:</label><br>
+        <input type="text" id="password"><br>
+        <label for="authorized">Conferma autorizzazione</label><br>
+        <input type="checkbox" id="authorized">
+        <button onclick="checkCredentials()">Accedi</button>
+        
+        
+        <script>
+            function checkCredentials(){
+                var user=document.getElementById("user").value;
+                var password=document.getElementById("password").value;
+                var authorized=document.getElementById("authorized").checked;
+                
+                if(user.toLowerCase()=="admin"){
+                    if(password=="12345"){
+                        if(authorized){
+                            alert("Accesso consentito")
+                        }
+                        else{alert("Autorizzazione necessaria")}
+                    }
+                    else{alert("password errata")}
+                }else{alert("Nome utente errato")}
+                
+            }
+        </script>
+    </body>
+</html>
